@@ -4,6 +4,7 @@ redis module
 """
 import redis
 from uuid import uuid4
+from typing import Callable, Union, Optional
 
 
 class Cache:
@@ -12,6 +13,7 @@ class Cache:
     """
 
     def __init__(self) -> None:
+        """initialize the class with creating the redis client"""
         self.__redis = redis.Redis()
         self.__redis.flushdb()
 
